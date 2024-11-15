@@ -3,80 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <title>Responsive Navbar</title>
-    <style>
-        /* Custom underline hover effect */
-        .underline-hover::after {
-            content: "";
-            display: block;
-            width: 0;
-            height: 2px;
-            background: #00BFFF; /* Blue color for underline */
-            transition: width 0.3s ease;
-        }
-
-        .underline-hover:hover::after {
-            width: 100%; /* Expand underline to full width on hover */
-        }
-    </style>
+    <title>Responsive Navbar Example</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="container mx-auto p-6">
-    <!-- Header with Logo, Nav Links, and Hamburger Icon -->
-    <header class="flex justify-between items-center">
-        <h1 class="text-xl font-bold">KERAPY</h1>
+<body class="bg-gray-100">
 
-        <!-- Full-Screen Navigation Menu -->
-        <nav class="hidden md:flex space-x-6">
-            <a href="#" class="text-gray-700 underline-hover">Home</a>
-            <a href="#" class="text-gray-700 underline-hover">About Us</a>
-            <a href="#" class="text-gray-700 underline-hover">Services</a>
-            <a href="#" class="text-gray-700 underline-hover">Contact Us</a>
-            <a href="#" class="text-gray-700 underline-hover">Blog</a>
-        </nav>
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="text-2xl font-bold">
+                <a href="#" class="text-gray-800 hover:text-gray-900">KERAPY</a>
+            </div>
+            
+            <!-- Navigation Links -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#" class="text-gray-800 hover:text-gray-900 font-medium relative group">
+                    Home
+                    <!-- Underline effect on hover -->
+                    <span class="absolute left-0 bottom-0 w-0 group-hover:w-full h-0.5 bg-teal-500 transition-all duration-300"></span>
+                </a>
+                <a href="#" class="text-gray-800 hover:text-gray-900 font-medium">About Us</a>
+                <a href="#" class="text-gray-800 hover:text-gray-900 font-medium">Services</a>
+                <a href="#" class="text-gray-800 hover:text-gray-900 font-medium">Contact Us</a>
+                <a href="#" class="text-gray-800 hover:text-gray-900 font-medium">Blog</a>
+            </div>
 
-        <!-- Contact Us Button (visible only in full-screen mode) -->
-        <a href="#" class="hidden md:inline-block border border-gray-400 px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-gray-800">
-            Contact us
-        </a>
+            <!-- Contact Button -->
+            <div class="hidden md:flex">
+                <a href="#" class="px-6 py-2 border border-gray-800 text-gray-800 rounded-full hover:bg-gray-100">
+                    Contact us
+                </a>
+            </div>
 
-        <!-- Hamburger Icon (visible only on mobile) -->
-        <button id="menu-toggle" class="text-gray-800 md:hidden focus:outline-none">
-            <!-- Hamburger SVG Icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-        </button>
-    </header>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                    <!-- Hamburger Icon -->
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
 
-    <!-- Mobile Navigation Menu -->
-    <nav id="mobile-menu" class="overflow-hidden max-h-0 transform transition-all duration-500 ease-in-out md:hidden flex flex-col mt-4 space-y-4">
-        <a href="#" class="text-gray-700 underline-hover">Home</a>
-        <a href="#" class="text-gray-700 underline-hover">About Us</a>
-        <a href="#" class="text-gray-700 underline-hover">Services</a>
-        <a href="#" class="text-gray-700 underline-hover">Contact Us</a>
-        <a href="#" class="text-gray-700 underline-hover">Blog</a>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#" class="block py-2 text-gray-800 hover:text-gray-900">Home</a>
+            <a href="#" class="block py-2 text-gray-800 hover:text-gray-900">About Us</a>
+            <a href="#" class="block py-2 text-gray-800 hover:text-gray-900">Services</a>
+            <a href="#" class="block py-2 text-gray-800 hover:text-gray-900">Contact Us</a>
+            <a href="#" class="block py-2 text-gray-800 hover:text-gray-900">Blog</a>
+            <a href="#" class="block mt-4 px-6 py-2 border border-gray-800 text-gray-800 rounded-full hover:bg-gray-100 text-center">
+                Contact us
+            </a>
+        </div>
     </nav>
 
-    <!-- JavaScript to Toggle the Slide Down Menu for Mobile -->
+    <!-- JavaScript to Toggle Mobile Menu -->
     <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        let menuOpen = false;
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
 
-        menuToggle.addEventListener('click', () => {
-            if (menuOpen) {
-                // Slide up by setting max-height to 0
-                mobileMenu.style.maxHeight = '0';
-            } else {
-                // Slide down by setting max-height to a large value
-                mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
             }
-            menuOpen = !menuOpen;
         });
     </script>
 </body>
 </html>
+
+
 
 
 
