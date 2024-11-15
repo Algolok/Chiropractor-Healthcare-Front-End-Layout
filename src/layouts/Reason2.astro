@@ -1,20 +1,48 @@
-<html lang="en"><head>
-    <title>Flexbox Layout</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Flexbox Layout</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    @media (max-width: 768px) {
+      .hide-on-mobile {
+        display: none;
+      }
+      .show-on-mobile {
+        display: block;
+      }
+    }
+    @media (min-width: 769px) {
+      .show-on-mobile {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body class="bg-gray-100">
-    <div class="max-w-6xl mx-auto p-6">
-        <div class="w-full">
-            <div class="w-full">
-                <img src="images/reason_img.jpg" alt="Doctor assisting patient" class="w-full h-auto object-cover rounded-t-md">
-            </div>
-            <div class="bg-blue-800 text-white text-center p-10 rounded-b-md">
-                <h1 class="text-2xl md:text-4xl font-bold mb-4">Ready to Start Your Journey to Better Health?</h1>
-                <p class="text-lg mb-6">Schedule your free consultation today!</p>
-                <a href="#" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-md">Book an Appointment</a>
-            </div>
-        </div>
+  <div class="max-w-6xl mx-auto p-6">
+    <div class="w-full hide-on-mobile">
+      <div class="w-full">
+        <img src="public/images/reason_img.jpg" alt="Doctor assisting patient" class="w-full h-auto object-cover rounded-t-md">
+      </div>
+      <div class="bg-blue-800 text-white text-center p-10 rounded-b-md">
+        <h1 class="text-2xl md:text-4xl font-bold mb-4">Ready to Start Your Journey to Better Health?</h1>
+        <p class="text-lg mb-6">Schedule your free consultation today!</p>
+        <a href="#" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-md">Book an Appointment</a>
+      </div>
     </div>
+    <div class="show-on-mobile bg-blue-800 text-white text-center p-10 rounded-md flex flex-col justify-center items-center">
+      <h1 class="text-lg md:text-4xl font-bold mb-4">Schedule your consultation today!</h1>
+      <div class="flex justify-center mt-4">
+        <a href="#" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-md">Book an Appointment</a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
+
+
+
 

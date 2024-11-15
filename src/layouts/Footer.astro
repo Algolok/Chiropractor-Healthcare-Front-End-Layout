@@ -2,7 +2,25 @@
 <html lang="en">
 <head>
     <title>Footer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    </style>
 </head>
 <body class="bg-gray-900 text-white">
     <footer class="p-10 bg-gray-800">
@@ -44,8 +62,8 @@
             </div>
         </div>
 
-        <div class="mt-8 border-t border-gray-700 pt-4 flex justify-between text-sm text-gray-400">
-            <div>
+        <div class="mt-8 border-t border-gray-700 pt-4 flex flex-col md:flex-row justify-between text-sm text-gray-400">
+            <div class="mb-4 md:mb-0">
                 <a href="#" class="mr-4 hover:text-white">Privacy Policy</a>
                 <a href="#" class="mr-4 hover:text-white">Terms of Service</a>
                 <a href="#" class="hover:text-white">Cookies Settings</a>
@@ -57,6 +75,7 @@
     </footer>
 </body>
 </html>
+
 
 
 

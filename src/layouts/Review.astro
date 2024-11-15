@@ -2,28 +2,78 @@
 <html lang="en">
 <head>
     <title>Testimonial Section</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @media (max-width: 768px) {
+            .hide-on-mobile {
+                display: none;
+            }
+            .show-on-mobile {
+                display: block;
+            }
+        }
+        @media (min-width: 769px) {
+            .show-on-mobile {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body class="bg-gray-100">
     <div class="max-w-6xl mx-auto p-6">
-        <div class="flex flex-col md:flex-row items-center justify-between">
-            <div class="md:w-1/2 p-6">
+        <div class="flex flex-col md:flex-row items-start justify-between gap-8">
+            <div class="md:w-1/2">
                 <h3 class="text-blue-500 font-semibold text-sm mb-2">&#10022; Testimonial</h3>
                 <h2 class="text-3xl font-bold mb-4">What People Say About our Therapy..!</h2>
-                <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="bg-white p-6 rounded-lg shadow-md relative">
                     <p class="text-gray-700 mb-4">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare. We were happy that we found the best."</p>
-                    <div class="text-right">
-                        <p class="font-semibold">Amelia</p>
-                        <p class="text-gray-500">Co-Founder, Elegant</p>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="font-semibold">Amelia</p>
+                            <p class="text-gray-500">Co-Founder, Elegant</p>
+                        </div>
+                        <div class="show-on-mobile">
+                            <div class="flex space-x-2">
+                                <button class="bg-gray-200 p-2 rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-700" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M7.707 15.707a1 1 0 01-1.414 0L1 10.414a1 1 0 010-1.414l5.293-5.293a1 1 0 011.414 1.414L3.414 10l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                                <button class="bg-gray-200 p-2 rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-700" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M12.293 4.293a1 1 0 011.414 0L19 9.586a1 1 0 010 1.414l-5.293 5.293a1 1 0 01-1.414-1.414L16.586 10 12.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-4 right-4 flex space-x-2 hide-on-mobile">
+                        <button class="bg-gray-200 p-2 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-700" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M7.707 15.707a1 1 0 01-1.414 0L1 10.414a1 1 0 010-1.414l5.293-5.293a1 1 0 011.414 1.414L3.414 10l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <button class="bg-gray-200 p-2 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-700" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M12.293 4.293a1 1 0 011.414 0L19 9.586a1 1 0 010 1.414l-5.293 5.293a1 1 0 01-1.414-1.414L16.586 10 12.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
-               
             </div>
-            <div class="md:w-1/2">
-                <img src="images/review.jpg" alt="Testimonial Image" class="w-full h-auto rounded-lg shadow-lg">
+            <div class="md:w-1/2 mt-6 md:mt-0 hide-on-mobile">
+                <img src="public/images/review.jpg" alt="Testimonial Image" class="w-full h-auto rounded-lg shadow-lg">
             </div>
         </div>
     </div>
 </body>
 </html>
+
+
+
+
+
+
 

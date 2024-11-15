@@ -1,29 +1,87 @@
- <html lang="en">  
-<head> 
-    <title>KERAPY Header</title>  
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> 
-</head>  
-<body class="bg-white shadow-md">  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Responsive Navbar</title>
+    <style>
+        /* Custom underline hover effect */
+        .underline-hover::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #00BFFF; /* Blue color for underline */
+            transition: width 0.3s ease;
+        }
 
-    <header class="bg-white shadow-md">  
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">  
-            <div class="flex justify-between items-center py-4">  
-                <div class="flex items-center">   
-                    <h1 class="text-2xl font-bold text-gray-800">KERAPY</h1>  
-                </div>  
-                <nav class="flex-1 flex justify-center space-x-6">  
-                    <a href="#" class="text-gray-600 hover:text-blue-600">Home</a>  
-                    <a href="#" class="text-gray-600 hover:text-blue-600">About Us</a>  
-                    <a href="#" class="text-gray-600 hover:text-blue-600">Services</a>  
-                    <a href="#" class="text-gray-600 hover:text-blue-600">Contact Us</a>  
-                    <a href="#" class="text-gray-600 hover:text-blue-600">Blog</a>  
-                </nav> 
-                <a href="#" class="bg-white text-black border border-black rounded-full px-4 py-2 hover:bg-black hover:text-white transition duration-300">Contact</a>
-            </div>  
-        </div>  
-    </header>  
+        .underline-hover:hover::after {
+            width: 100%; /* Expand underline to full width on hover */
+        }
+    </style>
+</head>
+<body class="container mx-auto p-6">
+    <!-- Header with Logo, Nav Links, and Hamburger Icon -->
+    <header class="flex justify-between items-center">
+        <h1 class="text-xl font-bold">KERAPY</h1>
 
-</body>  
+        <!-- Full-Screen Navigation Menu -->
+        <nav class="hidden md:flex space-x-6">
+            <a href="#" class="text-gray-700 underline-hover">Home</a>
+            <a href="#" class="text-gray-700 underline-hover">About Us</a>
+            <a href="#" class="text-gray-700 underline-hover">Services</a>
+            <a href="#" class="text-gray-700 underline-hover">Contact Us</a>
+            <a href="#" class="text-gray-700 underline-hover">Blog</a>
+        </nav>
+
+        <!-- Contact Us Button (visible only in full-screen mode) -->
+        <a href="#" class="hidden md:inline-block border border-gray-400 px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-gray-800">
+            Contact us
+        </a>
+
+        <!-- Hamburger Icon (visible only on mobile) -->
+        <button id="menu-toggle" class="text-gray-800 md:hidden focus:outline-none">
+            <!-- Hamburger SVG Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+    </header>
+
+    <!-- Mobile Navigation Menu -->
+    <nav id="mobile-menu" class="overflow-hidden max-h-0 transform transition-all duration-500 ease-in-out md:hidden flex flex-col mt-4 space-y-4">
+        <a href="#" class="text-gray-700 underline-hover">Home</a>
+        <a href="#" class="text-gray-700 underline-hover">About Us</a>
+        <a href="#" class="text-gray-700 underline-hover">Services</a>
+        <a href="#" class="text-gray-700 underline-hover">Contact Us</a>
+        <a href="#" class="text-gray-700 underline-hover">Blog</a>
+    </nav>
+
+    <!-- JavaScript to Toggle the Slide Down Menu for Mobile -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let menuOpen = false;
+
+        menuToggle.addEventListener('click', () => {
+            if (menuOpen) {
+                // Slide up by setting max-height to 0
+                mobileMenu.style.maxHeight = '0';
+            } else {
+                // Slide down by setting max-height to a large value
+                mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+            }
+            menuOpen = !menuOpen;
+        });
+    </script>
+</body>
 </html>
+
+
+
+
+
+
 
 
