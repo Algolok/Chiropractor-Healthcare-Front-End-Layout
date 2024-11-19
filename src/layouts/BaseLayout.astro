@@ -1,6 +1,5 @@
 ---
-
----
+--- 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,6 +42,7 @@
             <!-- Mobile Menu Button -->
             <div class="md:hidden">
                 <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                    <!-- Hamburger Icon -->
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                     </svg>
@@ -60,10 +60,8 @@
         </div>
     </nav>
 
-    <!-- Add your page content here -->
-
-    <!-- JavaScript -->
-    <script>
+    <!-- Client-side JavaScript Script -->
+    <script type="module">
         document.addEventListener('DOMContentLoaded', () => {
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -75,6 +73,5 @@
             }
         });
     </script>
-
 </body>
 </html>
